@@ -1,0 +1,98 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clinics",
+  "info": {
+    "singularName": "clinic",
+    "pluralName": "clinics",
+    "displayName": "Clinic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "decimal"
+    },
+    "longitude": {
+      "type": "decimal"
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "reviewCount": {
+      "type": "integer"
+    },
+    "nextAvailable": {
+      "type": "string"
+    },
+    "bookingUrl": {
+      "type": "text"
+    },
+    "services": {
+      "type": "json"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "clinicImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "servicesImage": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "staff": {
+      "type": "component",
+      "component": "clinic.staff",
+      "repeatable": true
+    },
+    "socialMedia": {
+      "type": "component",
+      "component": "clinic.social-media",
+      "repeatable": false
+    },
+    "description": {
+      "type": "component",
+      "component": "clinic.description",
+      "repeatable": true
+    },
+    "contact": {
+      "type": "component",
+      "component": "clinic.contact-info",
+      "repeatable": true
+    }
+  }
+}

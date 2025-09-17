@@ -41,6 +41,26 @@
     },
     "Content": {
       "type": "json"
+    },
+    "socialMedia": {
+      "type": "component",
+      "component": "clinic.social-media",
+      "repeatable": false
+    },
+    "description": {
+      "type": "component",
+      "component": "clinic.description",
+      "repeatable": false
+    },
+    "contactInfo": {
+      "type": "component",
+      "component": "clinic.contact-info",
+      "repeatable": false
+    },
+    "staff": {
+      "type": "component",
+      "component": "clinic.staff",
+      "repeatable": true
     }
   }
 }

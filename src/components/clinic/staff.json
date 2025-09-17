@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_clinic_staff",
+  "info": {
+    "displayName": "staff"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "imageAlt": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "clinic": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::clinic.clinic"
+    }
+  },
+  "config": {}
+}

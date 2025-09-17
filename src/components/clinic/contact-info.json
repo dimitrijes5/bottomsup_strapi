@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_clinic_contact_infos",
+  "info": {
+    "displayName": "contact-info"
+  },
+  "options": {},
+  "attributes": {
+    "street": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "hours": {
+      "type": "json"
+    }
+  },
+  "config": {}
+}

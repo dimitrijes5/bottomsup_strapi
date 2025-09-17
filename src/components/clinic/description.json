@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_clinic_descriptions",
+  "info": {
+    "displayName": "description"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "json"
+    },
+    "learnMoreLink": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_clinic_social_medias",
+  "info": {
+    "displayName": "social-media"
+  },
+  "options": {},
+  "attributes": {
+    "facebook": {
+      "type": "text"
+    },
+    "instagram": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

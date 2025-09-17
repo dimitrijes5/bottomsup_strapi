@@ -422,12 +422,14 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
   attributes: {
     author: Schema.Attribute.String;
+    contactInfo: Schema.Attribute.Component<'clinic.contact-info', false>;
     Content: Schema.Attribute.JSON;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     date: Schema.Attribute.Date;
     dateCreated: Schema.Attribute.Date;
+    description: Schema.Attribute.Component<'clinic.description', false>;
     Excerpt: Schema.Attribute.Text;
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -435,7 +437,59 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.String;
+    socialMedia: Schema.Attribute.Component<'clinic.social-media', false>;
+    staff: Schema.Attribute.Component<'clinic.staff', true>;
     Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiClinicClinic extends Struct.CollectionTypeSchema {
+  collectionName: 'clinics';
+  info: {
+    displayName: 'Clinic';
+    pluralName: 'clinics';
+    singularName: 'clinic';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    bookingUrl: Schema.Attribute.Text;
+    clinicImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    contact: Schema.Attribute.Component<'clinic.contact-info', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Component<'clinic.description', true>;
+    heroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    latitude: Schema.Attribute.Decimal;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::clinic.clinic'
+    > &
+      Schema.Attribute.Private;
+    longitude: Schema.Attribute.Decimal;
+    name: Schema.Attribute.String;
+    nextAvailable: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    rating: Schema.Attribute.Integer;
+    reviewCount: Schema.Attribute.Integer;
+    services: Schema.Attribute.JSON;
+    servicesImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    slug: Schema.Attribute.String;
+    socialMedia: Schema.Attribute.Component<'clinic.social-media', false>;
+    staff: Schema.Attribute.Component<'clinic.staff', true>;
+    state: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -953,6 +1007,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::blog.blog': ApiBlogBlog;
+      'api::clinic.clinic': ApiClinicClinic;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
