@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "training_dates",
+  "info": {
+    "singularName": "training-date",
+    "pluralName": "training-dates",
+    "displayName": "TrainingDate"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "start": {
+      "type": "date"
+    },
+    "end": {
+      "type": "date"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}

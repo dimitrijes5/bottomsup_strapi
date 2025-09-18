@@ -70,6 +70,14 @@ export interface HeroHero extends Struct.ComponentSchema {
   };
 }
 
+export interface HeroImageHero extends Struct.ComponentSchema {
+  collectionName: 'components_hero_image_heroes';
+  info: {
+    displayName: 'ImageHero';
+  };
+  attributes: {};
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -78,6 +86,7 @@ declare module '@strapi/strapi' {
       'clinic.social-media': ClinicSocialMedia;
       'clinic.staff': ClinicStaff;
       'hero.hero': HeroHero;
+      'hero.image-hero': HeroImageHero;
     }
   }
 }
